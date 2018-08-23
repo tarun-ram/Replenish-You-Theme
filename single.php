@@ -1,37 +1,64 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package Replenish_You_Theme
- */
+<?php get_header(); ?>
 
-get_header();
-?>
+<div class="container-fluid" role="main">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="row">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		<div class="col-md-12">
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-			the_post_navigation();
+				<div class="page-header">
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<p class="meta">
+						By <?php the_author_posts_link(); ?> on <?php echo the_time('l, F jS, Y'); ?>
+					</p>
+				</div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
-		endwhile; // End of the loop.
-		?>
+				<?php if( has_post_format( 'image' )): ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+					<p><?php the_post_thumbnail('medium'); ?></p>
 
-<?php
-get_sidebar();
-get_footer();
+
+					<?php the_content(); ?>
+
+					<?php elseif ( has_post_format( 'quote' )): ?>
+
+						<blockquote>
+							<?php the_excerpt(); ?>
+						</blockquote>
+
+						<?php the_content(); ?>
+
+						<?php else: ?>
+
+							<?php the_content(); ?>
+
+						<?php endif; ?>
+
+
+						<hr>
+
+						<p>
+							Post Type: <span class="post-type"><?php echo get_post_format(); ?></span> |
+							Category: <?php the_category( ', ' );?> |
+							<?php the_tags('Tags: ', ', ');?>
+
+						</p>
+
+						<hr>
+
+					<?php endwhile; endif; ?>
+
+					<?php comments_template(); ?>
+
+				</div>
+
+				<?php get_sidebar( 'blog' ); ?>
+
+			</div>
+
+		</div>
+
+		<?php get_footer(); ?>

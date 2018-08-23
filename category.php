@@ -6,8 +6,9 @@
 
 	    	<div class="col-md-8">
 
-			    <div class="page-header">	
+			    <div class="page-header">				    	
 			    	<h1><?php wp_title( '' ); ?></h1>
+			    	<p>This is a category archive</p>
 			    </div>
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

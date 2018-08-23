@@ -1,19 +1,17 @@
 <?php
 /**
- * The template for displaying comments
+ * The template for displaying Comments
  *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
+ * The area of the page that contains comments and the comment form.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Replenish_You_Theme
+ * @package WordPress
+ * @subpackage Twenty_Fourteen
+ * @since Twenty Fourteen 1.0
  */
 
 /*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
+ * If the current post is protected by a password and the visitor has not yet
+ * entered the password we will return early without loading the comments.
  */
 if ( post_password_required() ) {
 	return;
@@ -22,54 +20,47 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
+	<?php if ( have_comments() ) : ?>
+
+	<h2 class="comments-title">
+		<?php
+			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'twentyfourteen' ),
+				number_format_i18n( get_comments_number() ), get_the_title() );
 		?>
-		<h2 class="comments-title">
-			<?php
-			$replenish_you_theme_comment_count = get_comments_number();
-			if ( '1' === $replenish_you_theme_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'replenish-you-theme' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $replenish_you_theme_comment_count, 'comments title', 'replenish-you-theme' ) ),
-					number_format_i18n( $replenish_you_theme_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
+	</h2>
 
-		<?php the_comments_navigation(); ?>
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'twentyfourteen' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentyfourteen' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentyfourteen' ) ); ?></div>
+	</nav><!-- #comment-nav-above -->
+	<?php endif; // Check for comment navigation. ?>
 
-		<ol class="comment-list">
-			<?php
+	<ol class="comment-list">
+		<?php
 			wp_list_comments( array(
 				'style'      => 'ol',
 				'short_ping' => true,
+				'avatar_size'=> 34,
 			) );
-			?>
-		</ol><!-- .comment-list -->
+		?>
+	</ol><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+	<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'twentyfourteen' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentyfourteen' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentyfourteen' ) ); ?></div>
+	</nav><!-- #comment-nav-below -->
+	<?php endif; // Check for comment navigation. ?>
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'replenish-you-theme' ); ?></p>
-			<?php
-		endif;
+	<?php if ( ! comments_open() ) : ?>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'twentyfourteen' ); ?></p>
+	<?php endif; ?>
 
-	endif; // Check for have_comments().
+	<?php endif; // have_comments() ?>
 
-	comment_form();
-	?>
+	<?php comment_form(); ?>
 
 </div><!-- #comments -->
