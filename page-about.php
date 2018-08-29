@@ -1,25 +1,43 @@
-<?php get_header(); ?>
+<?php
+/* Template Name: About */
 
-<div class="container" role="main">
+$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 
-	<div class="row">
-		<div class="col-md-8">
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+get_header();
 
-				<div class="page-header">
-					<h1><?php the_title(); ?></h1>
-				</div>
+?>
 
-				<?php the_content(); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; endif; ?>
+	<!-- Hero image -->
+	<div  class="global--hero scroll" data-type="background" data-speed="5" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center fixed;" role="main">
 
+		<div class="intro center-block standard">
+			<?php the_custom_logo(); ?>
+			<h1><?php the_title(); ?></h1>
+			<p><?php the_field('strapline'); ?></p>
+			<a href="" class="text-link">
+				Find out more
+			</a>
 		</div>
 
+		<div class="arrow-down text-center">
+			<a href="#page-anchor" class="btn-arrow-down">
+				<i class="fas fa-angle-down"></i>
+			</a>
+		</div>
 
+	</div><!-- .end -->
 
-	</div>
+	<!-- The Content -->
+	<div id="page-anchor" class="container">
+		<div class="row">
+			<div class="col-12">
+				<?php the_content(); ?>
+			</div>
+		</div>
+	</div><!-- .end -->
 
-</div>
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

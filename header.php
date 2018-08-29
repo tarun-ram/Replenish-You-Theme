@@ -11,26 +11,26 @@
 
 <body <?php body_class(); ?>>
 
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+  <header class='clearfix'>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <nav id="mySidenav" class="sidenav" role="navigation">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <?php
+            wp_nav_menu( array(
+              'theme_location'  => 'primary',
+              'depth'           => 2,
+              'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+              'walker'          => new WP_Bootstrap_Navwalker(),
+            ) );
+
+            ?>
+          </nav>
+          <span onclick="openNav()" class="navbar-menu">MENU</span>
+        </div>
+
       </div>
-      <div class="collapse navbar-collapse">
-        <?php
-        $args = array(
-         'menu'        => 'header-menu',
-         'menu_class'  => 'nav navbar-nav',
-         'container'   => false
-       );
-        wp_nav_menu( $args );
-        ?>
-      </div>
-    </div>
-  </div>
+    </nav>
+
+  </header>

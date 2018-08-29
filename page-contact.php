@@ -1,35 +1,43 @@
-<?php get_header(); ?>
+<?php
+/* Template Name: Contact */
 
-    <div class="container" role="main">
+$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 
-	    <div class="row">
+get_header();
 
-	    	<div class="col-md-8">
+?>
 
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	
-				    <div class="page-header">	
-				    	<h1><?php the_title(); ?></h1>
-				    </div>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+	<!-- Hero image -->
+	<div  class="global--hero scroll" data-type="background" data-speed="5" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center fixed;" role="main">
 
-					<?php the_content(); ?>
+		<div class="intro center-block standard">
+			<?php the_custom_logo(); ?>
+			<h1><?php the_title(); ?></h1>
+			<p><?php the_field('strapline'); ?></p>
+			<a href="" class="text-link">
+				Find out more
+			</a>
+		</div>
 
-				<?php endwhile; endif; ?>
+		<div class="arrow-down text-center">
+			<a href="#page-anchor" class="btn-arrow-down">
+				<i class="fas fa-angle-down"></i>
+			</a>
+		</div>
 
-	    	</div>
+	</div><!-- .end -->
 
-	    	<div class="col-md-4">
-	    		<div class="widget">
-	    		<h3>Contact Info</h3>
-	    		<p>Phone: 555-555-5555</p>
-	    		<p>Address: N Burnet, Austin, TX 78758</p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d27559.020228121262!2d-97.7370279!3d30.297548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1398534727784" width="300" height="200" frameborder="0" style="border:0"></iframe>
-				</div>
-	    	</div>
+	<!-- The Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<?php the_content(); ?>
+			</div>
+		</div>
+	</div><!-- .end -->
 
-	    </div>
-
-    </div>
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

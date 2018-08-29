@@ -1,0 +1,101 @@
+.navbar {
+  padding-left: 0;
+  padding-top: 0;
+}
+
+.navbar-default
+{
+  transition: 500ms ease;
+  border: none;
+  background: transparent;
+}
+
+.navbar-default.scrolled
+{
+  background: $color__darkblue;
+}
+
+.navbar-default .container-fluid
+{
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  top:0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+span.navbar-menu
+{
+  font-size: $fontSizeHX;
+  display: block;
+  padding: 15px 25px;
+  cursor: pointer;
+  text-align: left;
+  color: $color__white;
+  background: $color__darkblue;
+}
+
+span.navbar-menu:before
+{
+  display: inline-block;
+  width: 20px;
+  height: 12px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  content: '';
+  vertical-align: middle;
+  background: url('src/assets/burger-menu.png') no-repeat top right;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* The side navigation menu */
+
+.sidenav
+{
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  width: 0;
+  height: 100%;
+  padding-top: 6rem;
+  transition: .5s;
+  background-color: $color__darkblue;
+
+}
+
+/* The navigation menu links */
+.sidenav a
+{
+  font-size: 24px;
+  display: block;
+  padding: .5rem 1rem;
+  transition: .3s;
+  text-decoration: none;
+  color: $color__white;
+
+  &:hover {
+    color: red;
+  }
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn
+{
+  font-size: 36px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+}
+
+

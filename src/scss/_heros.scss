@@ -1,0 +1,81 @@
+/* GLOBAL HERO
+============================= */
+
+.global--hero
+{
+    position:relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 0;
+    color: $color__white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    // FIND A WAY TO ATTACH THIS TO THE WP BACKGROUND AND ACF BG FIELD
+    background-size: cover!important;
+
+    @include media-breakpoint-down(md) {
+        min-height:70vh;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        // v1.
+        background-image: linear-gradient(to right top, #0f1c44, #202648, #2d304d, #393a51, #454555);
+        opacity: .5;
+    }
+
+}
+.global--hero .intro
+{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+// Temporary Fix
+@include media-breakpoint-down(md) {
+
+    .scroll
+    {
+        background-attachment: scroll!important;
+        background-size: cover!important;
+    }
+}
+
+.global--hero p
+{
+    margin-bottom: 20px;
+
+    // @include media-breakpoint-down(md) {
+        //     padding: 0 15rem;
+        // }
+    }
+
+    .global--hero .arrow-down {
+        position: absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        padding-bottom: 5%;
+    }
+
+    .global--hero .home .text-link {
+        padding-top: 1rem;
+    }
+
+    .global--hero .text-link {
+        display: table;
+        width:fit-content;
+        margin:auto;
+    }
+

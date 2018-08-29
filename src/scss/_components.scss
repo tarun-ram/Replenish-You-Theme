@@ -1,0 +1,54 @@
+
+
+// Vertical align arrows
+
+.owl-theme .owl-nav {
+    margin-top: 0;
+    position: relative;
+    top: -50%;
+    transform: translateY(50%);
+    color: $color__darkblue;
+}
+
+
+.owl-prev, .owl-next {
+    position: absolute;
+}
+
+
+.owltwo > .owl-nav .owl-prev {
+  left: 3rem;
+}
+.owltwo > .owl-nav .owl-next {
+    right: 3rem;
+}
+
+.owlone > .owl-nav .owl-prev,
+.owlthree > .owl-nav .owl-prev {
+  left: -3rem;
+}
+.owlone > .owl-nav .owl-next,
+.owlthree > .owl-nav .owl-next {
+    right: -3rem;
+}
+
+
+// All Owls
+.owl-nav i {
+    font-size: $fontSizeH1;
+}
+.owl-dots {
+    position: relative;
+    top: 1rem;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    color: $color__darkgold;
+    background:transparent;
+}
+.owl-theme .owl-dots .owl-dot.active span {
+    background:$color__darkblue;
+}
+.owl-theme .owl-dots .owl-dot:hover span {
+    background:$color__darkgold;
+}
