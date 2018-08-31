@@ -13,6 +13,7 @@
         </div>
     </div>
     <div class="row">
+        <!-- <div class="box effect1" style="position:absolute; top:0; z-index: 100;">Test</div> -->
         <?php
         global $wp_query, $paged;
 
@@ -36,6 +37,7 @@
         ?>
         <div class="owlone owl-carousel owl-theme">
           <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+
             <div class="item card">
               <div class="card-body">
                 <p class="card-text-name"><?php the_content(); ?></p>

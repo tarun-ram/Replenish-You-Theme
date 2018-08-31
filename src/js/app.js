@@ -103,6 +103,7 @@ $('.owlone').owlCarousel({
 
 $('.owltwo').owlCarousel({
     loop:true,
+    stagePadding: 100,
     margin:10,
     nav:true,
     navText: [
@@ -126,6 +127,7 @@ $('.owltwo').owlCarousel({
 $('.owlthree').owlCarousel({
     loop:true,
     margin:10,
+    // stagePadding: 100,
     nav:true,
     navText: [
     "<i class='fa fa-angle-left'></i>",
@@ -144,6 +146,7 @@ $('.owlthree').owlCarousel({
         }
     }
 })
+
 
 
 

@@ -14,8 +14,8 @@
         </div>
     </div>
     <div class="featured--retreats home scroll" data-type="background" data-speed="5">
-        <div class="container">
-            <div class="row">
+        <div class="">
+            <div class="row no-gutters">
                 <?php
                 global $wp_query, $paged;
 
@@ -39,7 +39,7 @@
                 ?>
 
                 <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-                    <div class="col-4">
+                    <div class="col">
                         <div class="card">
                             <?php if ( has_post_thumbnail()) : ?>
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
@@ -55,8 +55,8 @@
                                     <p class="card-text date"><i class="far fa-calendar-alt"></i>
                                         <?php the_field('date'); ?>
                                     </p>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <button class="btn">Book Retreat</button>
+                                    <a href="<?php the_permalink(); ?>" class="btn">
+                                        Book Retreat
                                     </a>
                                     <span><?php the_field('price'); ?></span>
                                 </div>

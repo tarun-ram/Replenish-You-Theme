@@ -13,6 +13,7 @@
 
 .owl-prev, .owl-next {
     position: absolute;
+    background: $color__lightblue;
 }
 
 
@@ -32,10 +33,19 @@
     right: -3rem;
 }
 
+// .owlthree .owl-dots {
+    //     background: $color__lightblue;
+    //     top:0;
+    //     border-bottom-left-radius: .25rem;
+    //     border-bottom-right-radius: .25rem;
+    //     vertical-align: middle;
+    // }
+
 
 // All Owls
 .owl-nav i {
     font-size: $fontSizeH1;
+    color: $color__darkblue;
 }
 .owl-dots {
     position: relative;

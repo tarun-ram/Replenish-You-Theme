@@ -12,7 +12,7 @@
 
 .navbar-default.scrolled
 {
-  background: $color__darkblue;
+  background: $color__lightblue;
 }
 
 .navbar-default .container-fluid
@@ -37,7 +37,7 @@ span.navbar-menu
   cursor: pointer;
   text-align: left;
   color: $color__white;
-  background: $color__darkblue;
+  background: $color__lightblue;
 }
 
 span.navbar-menu:before
@@ -84,7 +84,7 @@ span.navbar-menu:before
   color: $color__white;
 
   &:hover {
-    color: red;
+    color: $color__lightgold;
   }
 }
 

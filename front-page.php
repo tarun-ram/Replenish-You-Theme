@@ -14,14 +14,15 @@ get_header();
 
 		<div class="intro center-block home">
 			<?php the_custom_logo(); ?>
+			<hr>
 			<h1><?php the_title(); ?></h1>
 			<p class="home"><?php the_field('strapline'); ?></p>
-			<a href="">
-				<button class="btn play"><i class="far fa-play-circle"></i> Watch Video</button>
+			<a href="" class="btn play">
+				<i class="far fa-play-circle"></i> Watch Video
 			</a>
-			<a href="" class="text-link">
+			<!-- <a href="" class="text-link">
 				Browse Retreats
-			</a>
+			</a> -->
 		</div>
 
 		<div class="arrow-down text-center">
@@ -32,7 +33,7 @@ get_header();
 	</div><!-- .end -->
 
 	<!-- Pillars of Success -->
-	<section id="page-anchor" class="pillars--cards">
+	<!-- <section id="page-anchor" class="pillars--cards">
 		<div class="container">
 			<div class="row">
 				<?php if( have_rows('pillars_of_success') ): ?>
@@ -49,6 +50,34 @@ get_header();
 					<?php endwhile; ?>
 				<?php else : // no rows found ?>
 				<?php endif; ?>
+			</div>
+		</div>
+	</section> -->
+
+	<section id="page-anchor" class="pillars--cards">
+		<div class="">
+			<div class="row no-gutters">
+				<div class="col-6">
+					test
+				</div>
+				<div class="col-6">
+					<div class="row no-gutters">
+						<?php if( have_rows('pillars_of_success') ): ?>
+							<?php while ( have_rows('pillars_of_success') ) : the_row(); ?>
+								<div class="col-6">
+									<div class="card">
+										<div class="card-body text-center">
+											<?php the_sub_field('icon'); ?>
+											<h5 class="card-title"><?php the_sub_field('headline'); ?></h5>
+											<p class="card-text"><?php the_sub_field('summary'); ?></p>
+										</div>
+									</div>
+								</div>
+							<?php endwhile; ?>
+						<?php else : // no rows found ?>
+						<?php endif; ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

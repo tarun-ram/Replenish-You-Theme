@@ -50,28 +50,24 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .btn {
-  // border-color: $color__darkblue;
   background-image: linear-gradient(to right top, #0f1c44, #051b53, #001961, #00156f, #080c7b);
   color:#edeeff;
   font-weight: 500;
   padding: .495rem 1rem;
-  // box-shadow: 1px 1px 20px 0px #000000;
-  // text-shadow: 1px 2px 10px rgba(0, 0, 0, 2);
   transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out,border-color 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+
 
   @include media-breakpoint-down(md) {
     padding: .695rem 1.5rem;
   }
 
   &:hover {
-    // box-shadow: 1px 1px 10px 1px #000;
-    // background-image: linear-gradient(to left top, #080c7b, #00156f, #001961, #051b53, #0f1c44);
     background-image: linear-gradient(to right top, #121683, #0a1c7b, #092171, #0e2467, #14265d);
   }
 
   &:active,
   &:focus {
-    // border-color: $color__border-button-focus;
+    outline: none;
   }
 
   &:before {
@@ -91,7 +87,7 @@ a {
   &:focus,
   &:active {
     // color: $color__link-hover;
-    color: green;
+    color: $color__lightgold;
     text-decoration:none;
   }
   &:focus {

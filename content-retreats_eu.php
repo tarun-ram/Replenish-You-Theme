@@ -55,8 +55,8 @@ $wp_query->query( $args );
                                     <p class="card-text date"><i class="far fa-calendar-alt"></i>
                                         <?php the_field('date'); ?>
                                     </p>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <button class="btn">Book Retreat</button>
+                                    <a href="<?php the_permalink(); ?>" class="btn">
+                                        Book Retreat
                                     </a>
                                     <span><?php the_field('price'); ?></span>
                                 </div>

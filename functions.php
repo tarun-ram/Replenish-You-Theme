@@ -28,7 +28,7 @@ function theme_prefix_the_custom_logo() {
 // Load Roboto Google Fonts
 function roboto_google_fonts() {
 
-    wp_enqueue_style( 'font-roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,500,700', false );
+    wp_enqueue_style( 'font-roboto', 'https://fonts.googleapis.com/css?family=Raleway:300,400,700"', false );
 }
 add_action( 'wp_enqueue_scripts', 'roboto_google_fonts' );
 
