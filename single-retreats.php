@@ -26,38 +26,38 @@ get_header();
 
 
 
-		<!-- Retreat details -->
-		<section class="container" name="page-anchor">
-			<div class="row">
-				<div class="col-4 text-center">
-					<div class="card shadow-sm">
-						<?php the_field('location'); ?>
+	<!-- INTRO
+		================================================== -->
+		<section class="retreat--intro" role="main" name="page-anchor">
+			<div class="container">
+				<div class="row">
+					<div class="col-6 text-center">
+
+						<h3>LOCATION</h3>
+						<p><i class="fas fa-map-marker-alt"></i> <?php the_field('location'); ?></p>
+						<hr>
+
 					</div>
-				</div>
-				<div class="col-4 text-center">
-					<div class="card shadow-sm">
-						<?php the_field('date'); ?>
+					<div class="col-6 text-center">
+						<h3>DATES</h3>
+						<p><i class="far fa-calendar-alt"></i> <?php the_field('date'); ?></p>
+						<hr>
+
 					</div>
+
 				</div>
-				<div class="col-4 text-center">
-					<div class="card shadow-sm">
-						<?php the_field('price'); ?>
+
+				<div class="row">
+					<div class="col-12 the-content">
+						<?php the_content(); ?>
 					</div>
 				</div>
 			</div>
 		</section><!-- .end -->
 
-		<!-- Intro -->
-		<section class="container" role="main">
-			<div class="row">
-				<div class="col-12 the-content">
-					<?php the_content(); ?>
-				</div>
-			</div>
-		</section><!-- .end -->
-
-		<!-- Retreat Gallery -->
-		<section class="container-fluid" >
+	<!-- GALLERY
+		================================================== -->
+		<section class="retreat--gallery">
 			<div class="row">
 				<div class="owltwo owl-carousel owl-theme">
 					<?php if( have_rows('slider') ): ?>
@@ -65,7 +65,7 @@ get_header();
 							<div class="item">
 								<div class="row">
 									<div class="col-12">
-										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="img-fluid rounded">
+										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="img-fluid">
 									</div>
 								</div>
 							</div>
@@ -75,7 +75,8 @@ get_header();
 			</div>
 		</section><!-- .end -->
 
-		<!-- What's included? -->
+	<!-- WHAT'S INCLUDED
+		================================================== -->
 		<section class="retreat--included">
 			<div class="container">
 				<!-- Section heading -->
@@ -90,7 +91,7 @@ get_header();
 								<!-- Column Image -->
 								<div class="single-block mb-3">
 									<div class="mb-4">
-										<img class="img-fluid rounded shadow" src="<?php the_sub_field('top_image'); ?>" alt="Sample image">
+										<img class="img-fluid shadow" src="<?php the_sub_field('top_image'); ?>" alt="Sample image">
 									</div>
 								</div>
 
@@ -99,7 +100,7 @@ get_header();
 									<?php while( have_rows('text_repeater') ): the_row(); ?>
 										<div class="mb-3">
 											<div class="d-flex justify-content-between">
-												<i class="fas fa-square"></i>
+												<i class="fas fa-circle"></i>
 												<div class="col-11 pl-0 mb-3">
 													<p><?php the_sub_field('list_items'); ?></p>
 												</div>
@@ -114,116 +115,150 @@ get_header();
 					</div>
 				</section><!-- .end section -->
 
-				<!-- Hightlights -->
-				<section class="retreat--highlights">
-					<div class="container">
+	<!-- HIGHLIGHTS
+		================================================== -->
+		<section class="retreat--highlights">
+			<div class="container">
 
-						<div class="row">
-							<?php if( have_rows('highlights') ): while ( have_rows('highlights') ) : the_row(); ?>
+				<div class="row">
+					<?php if( have_rows('highlights') ): while ( have_rows('highlights') ) : the_row(); ?>
+						<div class="col-4">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title "><?php the_sub_field('highlight_title');?></h2>
+									<p class="card-text"><?php the_sub_field('highlight_summary');?></p>
+								</div>
+							</div>
+						</div>
+					<?php endwhile; endif; ?>
+				</div>
+			</div>
+		</section>
+
+	<!-- ROOMS
+		================================================== -->
+		<section class="retreat--rooms">
+			<div class="container">
+				<div class="row">
+					<div class="owlthree owl-carousel owl-theme card">
+						<div class="item">
+							<div class="row">
 								<div class="col-4">
-									<div class="card">
-										<div class="card-body">
-											<h5 class="card-title "><?php the_sub_field('highlight_title');?></h5>
-											<p class="card-text"><?php the_sub_field('highlight_summary');?></p>
+									<img class="img-fluid" src="http://localhost/wp-content/uploads/2018/08/hotel__room1.jpg" alt="">
+								</div>
+								<div class="col-8 d-flex align-items-center">
+
+									<div class="container">
+										<h2>Twin Room</h2>
+										<p class="price">From £800 per person</p>
+										<div class="col">
+											<ul class="list-group list-group-flush d-flex justify-content-start">
+												<li class="list-group-item d-flex justify-content-start"><i class="fas fa-circle"></i> Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio</li>
+												<li class="list-group-item d-flex justify-content-start"><i class="fas fa-circle"></i> Dapibus ac facilisis in</li>
+												<li class="list-group-item d-flex justify-content-start"><i class="fas fa-circle"></i>Morbi leo risus</li>
+
+											</ul>
+
 										</div>
 									</div>
 								</div>
-							<?php endwhile; endif; ?>
+							</div>
 						</div>
-					</div>
-				</section>
 
-				<!-- Room -->
-				<section class="retreat--rooms">
-					<!-- /////ACF THE TITLE -->
-					<h2 class="text-center ">Available Rooms</h2>
-					<div class="container">
-						<div class="row">
-							<div class="owlthree owl-carousel owl-theme card">
-								<div class="item">
-									<div class="row">
-										<div class="col-4">
-											<img class="img-fluid rounded" src="http://localhost/wp-content/uploads/2018/08/hotel__room1.jpg" alt="">
-										</div>
-										<div class="col-8 d-flex align-items-center">
+						<div class="item">
+							<div class="row">
+								<div class="col-4">
+									<img class="img-fluid" src="http://localhost/wp-content/uploads/2018/08/hotel__room1.jpg" alt="">
+								</div>
+								<div class="col-8 d-flex align-items-center">
 
-											<div class="container">
-												<h2>Twin Room</h2>
-												<p class="price">From £800 per person</p>
-												<div class="col">
-													<ul class="list-group list-group-flush d-flex justify-content-start">
-														<li class="list-group-item d-flex justify-content-start"><i class="fas fa-square"></i> Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio</li>
-														<li class="list-group-item d-flex justify-content-start"><i class="fas fa-square"></i> Dapibus ac facilisis in</li>
-														<li class="list-group-item d-flex justify-content-start"><i class="fas fa-square"></i>Morbi leo risus</li>
+									<div class="container">
+										<h2>Twin Room</h2>
+										<p class="price">From £800 per person</p>
+										<div class="col">
+											<ul class="list-group list-group-flush d-flex justify-content-start">
+												<li class="list-group-item d-flex justify-content-start"><i class="fas fa-circle"></i> Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio Cras justo odio</li>
+												<li class="list-group-item d-flex justify-content-start"><i class="fas fa-circle"></i> Dapibus ac facilisis in</li>
+												<li class="list-group-item d-flex justify-content-start"><i class="fas fa-circle"></i>Morbi leo risus</li>
 
-													</ul>
+											</ul>
 
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
-
 							</div>
+						</div>
 
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FLIGHTS
+		================================================== -->
+		<section class="retreat--flights">
+			<div class="row no-gutters ">
+				<div class="col-5 justify-content-center align-self-center">
+					<div class="p-3 ml-5 mr-5 left--col">
+						<h2>RECOMMENDED FLIGHTS</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+					</div>
+				</div>
+
+				<div class="col-7">
+					<div class="row d-flex justify-content-center">
+
+						<div class="col-md-12 col-sm-12 d-flex justify-content-center">
+
+							<ul class="flight--info list-inline text-center">
+								<li class="list-inline-item align-top text-center" >
+									<p class="badge badge-pill badge-warning"><strong>LGW</strong></p>
+									<p>London Gatwick</p>
+									<p>06:05AM</p>
+								</li>
+								<li class="list-inline-item">
+									<i class="fas fa-plane li-middle"></i>
+								</li>
+								<li class="list-inline-item align-top text-center">
+									<p class="badge badge-pill badge-warning"><strong>PVK</strong></p>
+									<p>London Gatwick</p>
+									<p>06:05AM</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row d-flex justify-content-center">
+						<div class="col-md-12 col-sm-12 d-flex justify-content-center">
+							<ul class="flight--info list-inline text-center">
+								<li class="list-inline-item align-top text-center" >
+									<p class="badge badge-pill badge-warning"><strong>LGW</strong></p>
+									<p>London Gatwick</p>
+									<p>06:05AM</p>
+								</li>
+								<li class="list-inline-item ">
+									<i class="fas fa-plane fa-flip-horizontal li-middle"></i>
+								</li>
+								<li class="list-inline-item align-top text-center">
+									<p class="badge badge-pill badge-warning"><strong>PVK</strong></p>
+									<p>London Gatwick</p>
+									<p>06:05AM</p>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- Flights -->
-			<section class="retreat--flights">
-				<!-- /////ACF THE TITLE -->
-				<h2 class="text-center ">Recommended Flights</h2>
-				<div class="container">
-					<div class="col-12">
-						<div class="row d-flex justify-content-center">
+	<!-- TESTIMONIALS PART
+		================================================== -->
 
-							<div class="col-md-6 col-sm-6 d-flex justify-content-end">
-
-								<ul class="depart list-inline">
-
-									<li class="list-inline-item align-top text-center" >
-										<p class="badge badge-pill badge-warning"><strong>LGW</strong></p>
-										<p>London Gatwick</p>
-										<p>06:05AM</p>
-									</li>
-									<li class="list-inline-item">
-										<i class="fas fa-plane-departure li-middle"></i>
-									</li>
-									<li class="list-inline-item align-top text-center">
-										<p class="badge badge-pill badge-warning"><strong>PVK</strong></p>
-										<p>London Gatwick</p>
-										<p>06:05AM</p>
-									</li>
-								</ul>
-							</div>
-							<div class="col-md-6 col-sm-6 d-flex justify-content-start">
-								<ul class="depart list-inline">
-									<li class="list-inline-item align-top text-center" >
-										<p class="badge badge-pill badge-warning"><strong>LGW</strong></p>
-										<p>London Gatwick</p>
-										<p>06:05AM</p>
-									</li>
-									<li class="list-inline-item ">
-										<i class="fas fa-plane-arrival li-middle"></i>
-									</li>
-									<li class="list-inline-item align-top text-center">
-										<p class="badge badge-pill badge-warning"><strong>PVK</strong></p>
-										<p>London Gatwick</p>
-										<p>06:05AM</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<?php get_template_part('content','testimonials'); ?>
+		<?php get_template_part('content','testimonials'); ?>
 
 
 
-		<?php endwhile; endif; ?>
+	<?php endwhile; endif; ?>
 
-		<?php get_footer(); ?>
+	<?php get_footer(); ?>

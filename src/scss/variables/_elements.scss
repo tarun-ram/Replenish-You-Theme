@@ -1,5 +1,7 @@
+
 html {
   box-sizing: border-box;
+  overflow-x:hidden;
 }
 
 *,
@@ -10,29 +12,38 @@ html {
 
 body
 {
-  font-family: $font__roboto;
+  font-family: $font__site;
   background: $color__background;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
   line-height: $font__line-height-body;
+
+
 }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
   line-height: 1;
-  font-family: $font__cinzel;
   font-weight: 700;
   text-transform: $uppercase;
   margin:1rem 0;
 }
 
 h1 {
-  font-size: $fontSizeH1;
+  font-size: $fontSizeLG;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $fontSizeHD;
+  }
 
 }
 
 h2 {
-  font-size: $fontSizeH2;
+  font-size: $fontSizeHD;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $fontSizeSB;
+  }
 }
 
 h3, h4, h5, h6 {
@@ -41,7 +52,6 @@ h3, h4, h5, h6 {
 
 p {
   font-size: $fontSizeBody;
-  font-family: $font__roboto;
   line-height: 1.6;
 }
 
@@ -50,43 +60,113 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .btn {
-  background-image: linear-gradient(to right top, #0f1c44, #051b53, #001961, #00156f, #080c7b);
-  color:#edeeff;
-  font-weight: 500;
-  padding: .495rem 1rem;
-  transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out,border-color 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
-
-
-  @include media-breakpoint-down(md) {
-    padding: .695rem 1.5rem;
-  }
-
-  &:hover {
-    background-image: linear-gradient(to right top, #121683, #0a1c7b, #092171, #0e2467, #14265d);
-  }
-
   &:active,
   &:focus {
     outline: none;
-  }
-
-  &:before {
-    background: url ('http://localhost/wp-content/uploads/2018/08/play.png')
+    box-shadow: none;
   }
 }
 
 
+/* Buttons styles */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+a.btn, .btn {
+  display: inline-block;
+  outline: none;
+  *zoom: 1;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: .025rem;
+  vertical-align: middle;
+  font-weight: 700;
+  border: 2px solid;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+  font-size: 1.0625em;
+  padding: 0.5625em 1.5em;
+  border-radius: .25rem;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.35);
+}
+
+.btn-white-gold {
+  color: $color__white;
+  border-color: $color__white;
+
+  &:hover {
+    background: $color__lightgold;
+    color: $color__white;
+    border-color: $color__lightgold;
+  }
+}
+
+.btn-gold-white {
+  color: $color__lightgold;
+  border-color: $color__lightgold;
+
+  &:hover {
+    background: $color__white;
+    color: $color__lightgold;
+    border-color: $color__white;
+  }
+}
+
+.btn-gold {
+  color: $color__lightgold;
+  border-color: $color__lightgold;
+
+  &:hover {
+    background: $color__lightgold;
+    color: $color__lightblue;
+    border-color: $color__lightgold;
+  }
+}
+
+//
+.btn-white-blue {
+  color: $color__white;
+  border-color: $color__white;
+
+  &:hover {
+    background: $color__darkblue;
+    color: $color__white;
+    border-color: $color__darkblue;
+  }
+}
+
+.btn-blue-white {
+  color: $color__darkblue;
+  border-color: $color__darkblue;
+
+  &:hover {
+    background: $color__white;
+    color: $color__darkblue;
+    border-color: $color__white;
+  }
+}
+
+.btn-blue {
+  color: $color__white;
+  border-color: $color__darkblue;
+
+  &:hover {
+    background: $color__darkblue;
+    color: $color__lightgold;
+    border-color: $color__darkblue;
+  }
+}
+
 a {
-  // color: $color__link;
   color: inherit;
 
-  &:visited {
-    // color: $color__link-visited;
-  }
   &:hover,
   &:focus,
   &:active {
-    // color: $color__link-hover;
     color: $color__lightgold;
     text-decoration:none;
   }
@@ -104,10 +184,17 @@ section {
 }
 
 hr {
-  // background-color: $color__background-hr;
+  background-color: rgba($color__darkgold,0.85);
   border: 0;
   height: 1px;
-  margin-bottom: 1.5em;
+  margin: 1rem auto;
+  width:20%;
+
+  @include media-breakpoint-down(sm) {
+
+    width:30%;
+  }
+
 }
 
 img {
@@ -125,19 +212,16 @@ ul {
 
 footer {
   background: $color__darkblue;
+  @include blueGradient;
   color:$color__white;
+  padding:4rem 0;
 }
 
 // Font Spacing In Heros ; p
 
 
-// Social Buttons
-.btn-fb,
-.btn-tw,
-.btn-insta,
-.btn-arrow-down {
-  font-size: 1.50rem;
-}
+
+
 
 
 

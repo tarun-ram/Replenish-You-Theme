@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php get_header();
+
+/* Template Name: Blog Template */
+
+?>
 
 <div class="container-fluid" role="main">
 

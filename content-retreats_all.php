@@ -21,7 +21,7 @@ $wp_query = null;
 $args = array(
     'post_type' => 'retreats',
     'orderby'=>'date',
-    'category_name' => 'uk',
+
     'paged' => $paged
 );
 $wp_query = new WP_Query();
@@ -34,7 +34,7 @@ $wp_query->query( $args );
             <h2 class=""><?php single_cat_title(); ?></h2>
         </div>
     </div> -->
-    <div class="featured--retreats home scroll" data-type="background" data-speed="5">
+    <div class="all--retreats scroll" data-type="background" data-speed="5">
         <div class="container">
             <div class="row">
 

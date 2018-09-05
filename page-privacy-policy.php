@@ -16,8 +16,8 @@ get_header();
 			<?php the_custom_logo(); ?>
 			<h1><?php the_title(); ?></h1>
 			<p><?php the_field('strapline'); ?></p>
-			<a href="#page-anchor" class="text-link">
-				Read our privacy policy
+			<a href="#page-anchor" class="btn btn-blue mt-3">
+				<span>Read more</span>
 			</a>
 		</div>
 

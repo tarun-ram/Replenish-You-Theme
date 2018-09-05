@@ -26,19 +26,11 @@ function theme_prefix_the_custom_logo() {
 }
 
 // Load Roboto Google Fonts
-function roboto_google_fonts() {
+function raleway_google_fonts() {
 
-    wp_enqueue_style( 'font-roboto', 'https://fonts.googleapis.com/css?family=Raleway:300,400,700"', false );
+    wp_enqueue_style( 'font-raleway', 'https://fonts.googleapis.com/css?family=Raleway:300,400,700"', false );
 }
-add_action( 'wp_enqueue_scripts', 'roboto_google_fonts' );
-
-// Load Cinzel Google Fonts
-function cinzel_google_fonts() {
-
-    wp_enqueue_style( 'font-cinzel', 'https://fonts.googleapis.com/css?family=Cinzel:400,700', false );
-}
-add_action( 'wp_enqueue_scripts', 'cinzel_google_fonts' );
-
+add_action( 'wp_enqueue_scripts', 'raleway_google_fonts' );
 
 // Load Font Awesome
 function font_awesome_styles() {

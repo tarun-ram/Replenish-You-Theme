@@ -25,21 +25,10 @@ $(function() {
 
 });
 
-/* Set the width of the side navigation to 250px */
-
-function openNav() {
-    document.getElementById("mySidenav").style.width = "300px";
-
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
 
 //
 $(window).scroll(function(){
-    $('nav').toggleClass('scrolled', $(this).scrollTop() > 500);
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 250);
 });
 
 $('a[href*="#"]')
@@ -84,8 +73,8 @@ $('.owlone').owlCarousel({
     margin:10,
     nav:true,
     navText: [
-    "<i class='fa fa-angle-left'></i>",
-    "<i class='fa fa-angle-right'></i>"
+    "<i class='fas fa-arrow-left'></i>",
+    "<i class='fas fa-arrow-right'></i>"
   ], autoplay: true,
   autoplayHoverPause: true,
     responsive:{
@@ -107,8 +96,8 @@ $('.owltwo').owlCarousel({
     margin:10,
     nav:true,
     navText: [
-    "<i class='fa fa-angle-left'></i>",
-    "<i class='fa fa-angle-right'></i>"
+    "<i class='fas fa-arrow-left'></i>",
+    "<i class='fas fa-arrow-right'></i>"
   ], autoplay: true,
   autoplayHoverPause: true,
     responsive:{
@@ -130,8 +119,8 @@ $('.owlthree').owlCarousel({
     // stagePadding: 100,
     nav:true,
     navText: [
-    "<i class='fa fa-angle-left'></i>",
-    "<i class='fa fa-angle-right'></i>"
+    "<i class='fas fa-arrow-left'></i>",
+    "<i class='fas fa-arrow-right'></i>"
   ], autoplay: true,
   autoplayHoverPause: true,
     responsive:{
@@ -146,6 +135,20 @@ $('.owlthree').owlCarousel({
         }
     }
 })
+
+//
+
+$(window).scroll(function() {
+  /* affix after scrolling 100px */
+  if ($(document).scrollTop() > 100) {
+    $('.navbar').addClass('affix');
+  } else {
+    $('.navbar').removeClass('affix');
+  }
+});
+
+
+
 
 
 

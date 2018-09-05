@@ -1,101 +1,128 @@
 .navbar {
-  padding-left: 0;
-  padding-top: 0;
+  -webkit-transition:padding 0.2s ease;
+  -moz-transition:padding 0.2s ease;
+  -o-transition:padding 0.2s ease;
+  transition:padding 0.2s ease;
 }
 
-.navbar-default
+.affix {
+  padding-top: 0.2em !important;
+  padding-bottom: 0.2em !important;
+  -webkit-transition:padding 0.2s linear;
+  -moz-transition:padding 0.2s linear;
+  -o-transition:padding 0.2s linear;
+  transition:padding 0.2s linear;
+}
+
+.scrolling-navbar.scrolled
 {
-  transition: 500ms ease;
-  border: none;
-  background: transparent;
+  background: $color__darkblue;
 }
 
-.navbar-default.scrolled
-{
-  background: $color__lightblue;
-}
+.navbar.scrolling-navbar {
+  -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+  -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
+  transition: background .5s ease-in-out,padding .5s ease-in-out;
+  // padding:2rem;
+  padding-top: 4%;
+  padding-right: 5%;
 
-.navbar-default .container-fluid
-{
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-fixed-top {
-  position: fixed;
-  top:0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-}
-
-span.navbar-menu
-{
-  font-size: $fontSizeHX;
-  display: block;
-  padding: 15px 25px;
-  cursor: pointer;
-  text-align: left;
-  color: $color__white;
-  background: $color__lightblue;
-}
-
-span.navbar-menu:before
-{
-  display: inline-block;
-  width: 20px;
-  height: 12px;
-  margin-right: 10px;
-  margin-bottom: 4px;
-  content: '';
-  vertical-align: middle;
-  background: url('src/assets/burger-menu.png') no-repeat top right;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-/* The side navigation menu */
-
-.sidenav
-{
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  width: 0;
-  height: 100%;
-  padding-top: 6rem;
-  transition: .5s;
-  background-color: $color__darkblue;
-
-}
-
-/* The navigation menu links */
-.sidenav a
-{
-  font-size: 24px;
-  display: block;
-  padding: .5rem 1rem;
-  transition: .3s;
-  text-decoration: none;
-  color: $color__white;
-
-  &:hover {
-    color: $color__lightgold;
+  @include media-breakpoint-down(sm) {
+    padding:1rem;
   }
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn
-{
-  font-size: 36px;
-  position: absolute;
-  top: 0;
-  right: 25px;
-  margin-left: 50px;
+.navbar li > a {
+  text-transform: $uppercase;
+  font-weight: 700;
+  letter-spacing: $ltrspacingWide;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+  color: $color__white;
+}
+
+.navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+  color: $color__lightgold;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: rgba($color__lightgold,0.90);
+}
+
+@include media-breakpoint-down(md) {
+  .navbar {
+    background-color: $color__darkblue;
+  }
+  .navbar-dark .navbar-toggler {
+    color: rgba($color__lightgold,0.5);
+    border-color: rgba($color__lightgold,0.5);
+  }
+
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(251,209,139, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+}
+
+// footer
+
+.footer--social {
+  padding-bottom:1rem;
+}
+
+.footer--social i {
+  color: $color__lightgold;
+  padding:0 .6rem;
+
+  transition:color .8s ease-in-out;
+  &:hover {
+    color: $color__white;
+  }
+}
+
+// Social Buttons
+.footer--social .btn-fb,
+.footer--social .btn-tw,
+.footer--social .btn-insta,
+.footer--social .btn-arrow-down {
+  font-size: 2rem;
+}
+
+
+.footer--content {
+
+}
+
+.footer--content h5 {
+  color: $color__lightgold;
+  letter-spacing: $ltrspacingWide;
+  padding-bottom:1rem;
+  border-bottom: 2px solid $color__lightgold;
+  width: fit-content;
+  display: table;
+}
+
+#menu-footer-menu li.list-inline-item,
+#menu-footer-menu-1 li.list-inline-item {
+  display: block;
+}
+
+#menu-footer-menu li.list-inline-item .nav-link,
+#menu-footer-menu-1 li.list-inline-item .nav-link {
+  padding-left:0;
+}
+
+#menu-footer-menu > .list-inline-item .nav-link,
+#menu-footer-menu-1 > .list-inline-item .nav-link {
+  display: inline;
+  line-height:2;
+}
+
+
+
+
+
+
+
 
 

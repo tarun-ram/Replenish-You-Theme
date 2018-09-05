@@ -17,9 +17,10 @@ get_header();
 			<hr>
 			<h1><?php the_title(); ?></h1>
 			<p class="home"><?php the_field('strapline'); ?></p>
-			<a href="" class="btn play">
-				<i class="far fa-play-circle"></i> Watch Video
+			<a href="" class="btn btn-blue mt-3">
+				<i class="fas fa-play-circle"></i> <span>Watch Video</span>
 			</a>
+
 			<!-- <a href="" class="text-link">
 				Browse Retreats
 			</a> -->
@@ -32,51 +33,34 @@ get_header();
 		</div>
 	</div><!-- .end -->
 
-	<!-- Pillars of Success -->
-	<!-- <section id="page-anchor" class="pillars--cards">
-		<div class="container">
-			<div class="row">
-				<?php if( have_rows('pillars_of_success') ): ?>
-					<?php while ( have_rows('pillars_of_success') ) : the_row(); ?>
-						<div class="col-3">
-							<div class="card">
-								<div class="card-body text-center">
-									<?php the_sub_field('icon'); ?>
-									<h5 class="card-title"><?php the_sub_field('headline'); ?></h5>
-									<p class="card-text"><?php the_sub_field('summary'); ?></p>
-								</div>
-							</div>
-						</div>
-					<?php endwhile; ?>
-				<?php else : // no rows found ?>
-				<?php endif; ?>
-			</div>
-		</div>
-	</section> -->
 
-	<section id="page-anchor" class="pillars--cards">
-		<div class="">
-			<div class="row no-gutters">
-				<div class="col-6">
-					test
+<!-- PILLARS OF SUCCESS
+	================================================== -->
+	<section id="page-anchor" class="pillars--success">
+		<div class="row no-gutters ">
+			<div class="col-5 justify-content-center align-self-center">
+				<div class="p-3 ml-5 mr-5 left--col">
+					<h2>PILLARS OF SUCCESS</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 				</div>
-				<div class="col-6">
-					<div class="row no-gutters">
-						<?php if( have_rows('pillars_of_success') ): ?>
-							<?php while ( have_rows('pillars_of_success') ) : the_row(); ?>
-								<div class="col-6">
-									<div class="card">
-										<div class="card-body text-center">
-											<?php the_sub_field('icon'); ?>
-											<h5 class="card-title"><?php the_sub_field('headline'); ?></h5>
-											<p class="card-text"><?php the_sub_field('summary'); ?></p>
-										</div>
+			</div>
+
+			<div class="col-7">
+				<div class="row no-gutters">
+					<?php if( have_rows('pillars_of_success') ): ?>
+						<?php while ( have_rows('pillars_of_success') ) : the_row(); ?>
+							<div class="col-6">
+								<div class="card" style="background: url(<?php the_sub_field('background_image'); ?>)no-repeat center center;">
+									<div class="card-body text-center">
+										<h3 class="card-title"><?php the_sub_field('headline'); ?></h3>
+										<hr>
+										<p class="card-text"><?php the_sub_field('summary'); ?></p>
 									</div>
 								</div>
-							<?php endwhile; ?>
-						<?php else : // no rows found ?>
-						<?php endif; ?>
-					</div>
+							</div>
+						<?php endwhile; ?>
+					<?php else : // no rows found ?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

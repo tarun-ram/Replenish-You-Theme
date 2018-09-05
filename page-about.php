@@ -14,10 +14,11 @@ get_header();
 
 		<div class="intro center-block standard">
 			<?php the_custom_logo(); ?>
+			<hr>
 			<h1><?php the_title(); ?></h1>
 			<p><?php the_field('strapline'); ?></p>
-			<a href="" class="text-link">
-				Find out more
+			<a href="" class="btn btn-blue mt-3">
+				<span>Read more</span>
 			</a>
 		</div>
 

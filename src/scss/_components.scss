@@ -1,6 +1,6 @@
-
-
-// Vertical align arrows
+/*--------------------------------------------------------------
+# OWL ALL
+--------------------------------------------------------------*/
 
 .owl-theme .owl-nav {
     margin-top: 0;
@@ -8,44 +8,18 @@
     top: -50%;
     transform: translateY(50%);
     color: $color__darkblue;
+    z-index: 100;
 }
-
 
 .owl-prev, .owl-next {
     position: absolute;
     background: $color__lightblue;
 }
 
-
-.owltwo > .owl-nav .owl-prev {
-  left: 3rem;
-}
-.owltwo > .owl-nav .owl-next {
-    right: 3rem;
-}
-
-.owlone > .owl-nav .owl-prev,
-.owlthree > .owl-nav .owl-prev {
-  left: -3rem;
-}
-.owlone > .owl-nav .owl-next,
-.owlthree > .owl-nav .owl-next {
-    right: -3rem;
-}
-
-// .owlthree .owl-dots {
-    //     background: $color__lightblue;
-    //     top:0;
-    //     border-bottom-left-radius: .25rem;
-    //     border-bottom-right-radius: .25rem;
-    //     vertical-align: middle;
-    // }
-
-
-// All Owls
 .owl-nav i {
     font-size: $fontSizeH1;
     color: $color__darkblue;
+    vertical-align:middle;
 }
 .owl-dots {
     position: relative;
@@ -62,3 +36,140 @@
 .owl-theme .owl-dots .owl-dot:hover span {
     background:$color__darkgold;
 }
+
+
+/*--------------------------------------------------------------
+# OWL ONE
+--------------------------------------------------------------*/
+
+.owlone > .owl-nav .owl-prev {
+  left: -3rem;
+}
+.owlone > .owl-nav .owl-next {
+    right: -3rem;
+}
+
+.owlone .owl-nav i {
+    color: $color__lightgold;
+    width:100%;
+    transition:color .8s ease-in-out;
+
+    &:hover {
+        color: $color__lightblue;
+
+    }
+
+}
+
+.owlone > .owl-dots .owl-dot span {
+    background:transparent;
+    border: 1px solid $color__lightgold;
+}
+
+.owlone > .owl-dots .owl-dot.active span {
+    background:$color__lightgold;
+}
+.owlone > .owl-dots .owl-dot:hover span {
+    background:$color__lightblue;
+}
+
+/*--------------------------------------------------------------
+# OWL TWO
+--------------------------------------------------------------*/
+
+.owltwo > .owl-nav .owl-prev {
+  left: 3rem;
+}
+.owltwo > .owl-nav .owl-next {
+    right: 3rem;
+}
+
+.owltwo .owl-nav i {
+    color: $color__white;
+    width:100%;
+    transition:color .8s ease-in-out;
+
+    &:hover {
+        color: $color__lightgold;
+
+    }
+
+}
+
+.owltwo > .owl-dots .owl-dot span {
+    background:transparent;
+    border: 1px solid $color__lightgold;
+}
+
+.owltwo > .owl-dots .owl-dot.active span {
+    background:$color__lightgold;
+}
+.owltwo > .owl-dots .owl-dot:hover span {
+    background:$color__lightblue;
+}
+
+
+.owltwo .owl-carousel {
+    position: relative;
+}
+
+.owltwo.owl-carousel,
+.owltwo.owl-carousel
+.owltwo.owl-item {
+    @include lightGoldGradient;
+
+}
+.owltwo > .owl-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+/*--------------------------------------------------------------
+# OWL THREE
+--------------------------------------------------------------*/
+
+.owlthree > .owl-nav .owl-prev {
+  left: -3rem;
+}
+
+.owlthree > .owl-nav .owl-next {
+    right: -3rem;
+}
+
+.owlthree > .owl-dots {
+    top: 3rem;
+}
+
+.owlthree .owl-dots .owl-dot.active span {
+    background:$color__darkgold;
+}
+.owlthree .owl-dots .owl-dot:hover span {
+    background:$color__lightgold;
+}
+
+.owlthree .owl-nav i {
+    color: $color__white;
+
+    &:hover {
+        color: $color__lightgold;
+    }
+}
+
+.owlthree > .owl-dots .owl-dot span {
+    background:transparent;
+    border: 1px solid $color__lightgold;
+}
+
+.owlthree > .owl-dots .owl-dot.active span {
+    background:$color__lightgold;
+}
+.owlthree > .owl-dots .owl-dot:hover span {
+    background:$color__lightblue;
+}
+
