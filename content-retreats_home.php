@@ -32,16 +32,16 @@
         ?>
 
         <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-            <div class="col-md-4 ">
+            <div class="col-md-4">
 
 
-                <div class="card d-flex justify-content-center align-self-center ">
+                <div class="card d-flex justify-content-center align-self-center img-gradient">
 
                     <?php if ( has_post_thumbnail()) : ?>
-                        <a class="img-gradient" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                            <?php the_post_thumbnail('', array(
-                                'class' => 'card-img-top')); ?>
-                            </a>
+
+                        <?php the_post_thumbnail('', array(
+                            'class' => 'card-img-top')); ?>
+
 
 
                         <?php endif; ?>

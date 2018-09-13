@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-
-
 <section class="container">
 	<div class="row">
 		<div class="card-columns">

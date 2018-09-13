@@ -147,6 +147,24 @@ $(window).scroll(function() {
   }
 });
 
+//
+
+$(document).ready(function () {
+// Show URL on Mouse Hover
+    $(".img-gradient").hover(function () {
+        window.status = $(this).find("a:first").attr("href");
+    }, function () {
+        window.status = "";
+    });
+
+    // Or use this to Open link in same window (similar to target=_blank)
+    $(".img-gradient").click(function(){
+        window.location = $(this).find("a:first").attr("href");
+        return false;
+    });
+});
+
+
 
 
 

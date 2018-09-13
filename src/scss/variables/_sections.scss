@@ -76,7 +76,7 @@
 }
 
 .featured--retreats h2 {
-    font-size: $fontSizeSM;
+    font-size: $fontSizeHD;
     color: $color__white;
     letter-spacing: $ltrspacingWide;
     text-shadow: 0 5px 5px rgba(0,0,0,0.3);
@@ -86,22 +86,25 @@
     display: table;
 }
 
+.featured--retreats i {
+    padding-right: .3rem;
+}
+
 
 
 .featured--retreats .card {
     position: relative;
-    color: $color__white;
     width:100%;
     height:100%;
 }
 
 .featured--retreats .card-body {
     position: absolute;
-
 }
 
 .featured--retreats .card-body p {
     font-size: $fontSizeSB;
+    color: $color__white;
 }
 
 .featured--retreats .img-gradient {
@@ -133,6 +136,12 @@
 
 .featured--retreats .img-gradient img {
   display:block;
+}
+
+.featured--retreats .img-gradient:hover .btn-gold {
+    background: $color__lightgold;
+    color: $color__lightblue;
+    border-color: $color__lightgold;
 }
 
 
